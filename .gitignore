@@ -1,3 +1,5 @@
 /tmp
 /vendor/ruby
 /log/*
+/.specjour/performance
+/.specjour/rsyncd.pid
