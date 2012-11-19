@@ -1,6 +1,6 @@
 # Welcome to Rails + [Specjour](https://github.com/sandro/specjour)
 
-This is very simple rails app contains very simple rspec, and cucumber tests. This app gives the specjour community a sane playground where they can try out specjour, and recreate any bugs they encounter.
+A very simple Rails app, containing very simple RSpec and Cucumber tests. This app gives the specjour community a sane playground where they can try out specjour, and recreate any bugs they encounter.
 
 ## Installation
 
@@ -31,8 +31,8 @@ Edit your Gemfile
 
     gem 'specjour', path: '~/src/ruby/specjour'
 
-Also, life will be easier if you use two separate terminal windows, one for the
-listener, and one for the dispatcher. Make sure the listener only sets up one worker process to ensure the debugger is actually usable.
+Also, life will be easier if you use two separate terminal windows: one for the
+listener, and one for the dispatcher. Make sure the listener only sets up one worker process to ensure usable debuggers.
 
 Terminal 1
 
