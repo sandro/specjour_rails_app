@@ -7,7 +7,7 @@ describe Article do
     article.body.should be_nil
   end
 
-  describe "nested" do
+  describe "timing" do
     50.times do |i|
       it "sleeps" do
         sleep 0.1
