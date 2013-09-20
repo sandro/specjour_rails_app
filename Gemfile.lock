@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/nerakdon/specjour.git
-  revision: a97fbf8855649fc396bec9bd506e74ab0f042ea5
+  revision: 40a7ac89eb863a1731d997c13752910ff4d66373
   branch: rails4
   specs:
     specjour (0.7.0)
