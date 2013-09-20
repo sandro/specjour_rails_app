@@ -1,4 +1,11 @@
 RailsApp::Application.routes.draw do
+  get "articles/index"
+  get "articles/show"
+  get "articles/new"
+  get "articles/create"
+  get "articles/edit"
+  get "articles/update"
+  get "articles/delete"
   resources :articles
 
   # The priority is based upon order of creation:
