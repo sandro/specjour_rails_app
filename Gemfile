@@ -13,7 +13,7 @@ group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  gem 'specjour', :github => 'nerakdon/specjour', :branch => 'rails4'
+  gem 'specjour', :path => '~/Sites/specjour'
 end
 
 
