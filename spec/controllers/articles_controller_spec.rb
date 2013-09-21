@@ -110,7 +110,7 @@ describe ArticlesController do
         # specifies that the Article created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Article.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
+        Article.any_instance.should_receive(:update).with({'these' => 'params'})
         put :update, {:id => article.to_param, :article => {'these' => 'params'}}, valid_session
       end
 
