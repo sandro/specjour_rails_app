@@ -22,23 +22,19 @@ describe ArticlesController do
 
   # This should return the minimal set of attributes required to create a valid
   # Article. As you add validations to Article, be sure to
-  # update the return value of this method accordingly.
-  def valid_attributes
-    {}
-  end
+  # adjust the attributes here as well.
+  let(:valid_attributes) { {lead: 'title'} }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # ArticlesController. Be sure to keep this updated too.
-  def valid_session
-    {}
-  end
+  let(:valid_session) { {} }
 
   describe "GET index" do
     it "assigns all articles as @articles" do
       article = Article.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:articles).should eq([article])
+      assigns(:articles).should eq(Article.all)
     end
   end
 
@@ -89,14 +85,14 @@ describe ArticlesController do
       it "assigns a newly created but unsaved article as @article" do
         # Trigger the behavior that occurs when invalid params are submitted
         Article.any_instance.stub(:save).and_return(false)
-        post :create, {:article => {}}, valid_session
+        post :create, {:article => {foo: 'bar'}}, valid_session
         assigns(:article).should be_a_new(Article)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Article.any_instance.stub(:save).and_return(false)
-        post :create, {:article => {}}, valid_session
+        post :create, {:article => {foo: 'bar'}}, valid_session
         response.should render_template("new")
       end
     end
@@ -110,8 +106,8 @@ describe ArticlesController do
         # specifies that the Article created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Article.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, {:id => article.to_param, :article => {'these' => 'params'}}, valid_session
+        Article.any_instance.should_receive(:update).with({ 'lead' => 'updated' })
+        put :update, {:id => article.to_param, :article => { lead: 'updated' }}, valid_session
       end
 
       it "assigns the requested article as @article" do
@@ -132,7 +128,7 @@ describe ArticlesController do
         article = Article.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Article.any_instance.stub(:save).and_return(false)
-        put :update, {:id => article.to_param, :article => {}}, valid_session
+        put :update, {:id => article.to_param, :article => {foo: 'bar'}}, valid_session
         assigns(:article).should eq(article)
       end
 
@@ -140,7 +136,7 @@ describe ArticlesController do
         article = Article.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Article.any_instance.stub(:save).and_return(false)
-        put :update, {:id => article.to_param, :article => {}}, valid_session
+        put :update, {:id => article.to_param, :article => {foo: 'bar'}}, valid_session
         response.should render_template("edit")
       end
     end
