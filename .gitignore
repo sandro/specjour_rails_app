@@ -3,3 +3,4 @@
 /log/*
 /.specjour/performance
 /.specjour/rsyncd.pid
+/db/*.sqlite3
