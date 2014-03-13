@@ -4,3 +4,4 @@
 /.specjour/performance
 /.specjour/rsyncd.pid
 /db/*.sqlite3
+/.bundle
